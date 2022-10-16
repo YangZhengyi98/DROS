@@ -34,7 +34,7 @@ def parse_args():
                         help='reward for the click behavior.')
     parser.add_argument('--r_buy', type=float, default=1.0,
                         help='reward for the purchase behavior.')
-    parser.add_argument('--lr', type=float, default=0.005,
+    parser.add_argument('--lr', type=float, default=0.001,
                         help='Learning rate.')
     parser.add_argument('--model_name', type=str, default='Caser_mse',
                         help='model name.')
@@ -42,7 +42,7 @@ def parse_args():
                         help='0: Disable model saver, 1: Activate model saver')
     parser.add_argument('--cuda', type=int, default=0,
                         help='cuda device.')
-    parser.add_argument('--l2_decay', type=float, default=0,
+    parser.add_argument('--l2_decay', type=float, default=1e-6,
                         help='l2 loss reg coef.')
     parser.add_argument('--alpha', type=float, default=0,
                         help='dro alpha.')
