@@ -443,6 +443,7 @@ if __name__ == '__main__':
                 loss_all = loss
             else:
                 loss_all = loss + args.alpha * torch.mean(loss_dro)
+            loss_all.backward()
             optimizer.step()
 
             if True:
