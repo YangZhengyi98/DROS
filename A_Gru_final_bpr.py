@@ -278,7 +278,7 @@ if __name__ == '__main__':
             pos_loss_dro = torch.gather(torch.mul((model_output - 1) * (model_output - 1), ps), 1, target)
             pos_loss_dro = torch.squeeze(pos_loss_dro)
 
-            inner_dro = torch.sum(torch.exp(torch.clamp(torch.mul(model_output * model_output, ps) / args.beta, max=1e2)), 1) - torch.exp(torch.clamp(pos_scores_dro / args.beta, max=1e2)) + torch.exp(torch.clamp(pos_loss_dro / args.beta, max=1e2)) 
+            inner_dro = torch.sum(torch.exp((torch.mul(model_output * model_output, ps) / args.beta)), 1) - torch.exp((pos_scores_dro / args.beta)) + torch.exp((pos_loss_dro / args.beta)) 
 
             # A = torch.sum(torch.exp(torch.mul(model_output * model_output, ps)), 1)
             # B = torch.exp(pos_scores_dro)
