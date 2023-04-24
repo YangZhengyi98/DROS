@@ -187,7 +187,7 @@ def calcu_propensity_score(buffer):
     pop = np.array(pop)
     ps = pop + 1
     ps = ps / np.sum(ps)
-    ps = np.power(ps, 0.5)
+    ps = np.power(ps, 0.05)
     return ps
 
 
