@@ -100,6 +100,7 @@ def calculate_hit(sorted_list,topk,true_items,rewards,r_click,total_reward,hit_c
 #                                replace=False)
 #         return [self.buffer[ii] for ii in idx]
 
+# NeuProcessEncoder
 class NeuProcessEncoder(nn.Module):
     def __init__(self, input_size=64, hidden_size=64, output_size=64, dropout_prob=0.4, device=None):
         super(NeuProcessEncoder, self).__init__()
